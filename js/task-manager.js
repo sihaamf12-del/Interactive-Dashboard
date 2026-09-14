@@ -4,7 +4,8 @@ function weeklyGoal(userName, dailyGoal, bonusTasks) {
 
     let weeklyTotal = dailyGoal * 5;
     let totalGoal = weeklyTotal + bonusTasks;
-    let output = "User: " + userName + "<br>Total Weekly Goal: " + totalGoal;
+    // CHANGE: Document-write to output
+    let output = "User: " + userName + "<br>" + "Total Weekly Goal: " + totalGoal;
 
     document.getElementById("goal-message").innerHTML = output;
 
