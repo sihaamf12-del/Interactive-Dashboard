@@ -22,6 +22,24 @@
     <div class="container">
         <div class="row">
             <!-- Dashboard Content -->
+             <div class= "col" id= "metric-converter">
+                <form>
+                    <input type="number" id="value" placeholder="Please enter a number">
+                    <select name="pick-type">
+                        <option value="In to Cm">Inch to Centimeter</option>
+                        <option value="Ft to Cm">Foot to Centimeter</option>
+                        <option value="Yd to M">Yard to Meter</option>
+                        <option value="Mi to Km">Mile to Kilometer</option>
+                        <option value="Cm to In">Centimeter to Inch</option>
+                        <option value="Cm to Ft">Centimeter to Foot</option>
+                        <option value="M to Yd">Meter to Yard</option>
+                        <option value="Km to Mi">Kilometer to Mile</option>
+                    </select>
+                    <button type="submit" id="submit-btn">Convert</button>
+                </form>
+                <div id="result"></div>
+                <script src="js/metric-converter.js" defer></script>
+             </div>
              <div class = "col" id = "weekly-tasks">
                 <script src="js/task-manager.js" defer></script>
 

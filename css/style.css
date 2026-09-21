@@ -17,3 +17,11 @@ p, h1 {
     margin: 10px;
 }
 
+#metric-converter {
+    background-color: #faf2f2;
+    border: 1px solid #000;
+    border-radius: 8px;
+    align-items: center;
+    padding: 10px;
+    margin: 10px;
+}
