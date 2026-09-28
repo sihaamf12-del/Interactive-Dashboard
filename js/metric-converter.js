@@ -34,7 +34,7 @@ document.getElementById("submit-btn").addEventListener("click", function (event)
     } else if (selection === 7) {
         result = num * 1.09;
         unit = "yards";
-        intial = "meters";
+        initial = "meters";
     } else if (selection === 8) {
         result = num * 0.62;
         unit = "miles";
