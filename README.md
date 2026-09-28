@@ -1,7 +1,7 @@
 # Interactive-Dashboard
 # This project is a web-based dashboard built for WEB-115 to demonstrate interactive JavaScript features.
 ## TODO: Future Enhancements
-- [ ] Add a metric conversion tool.
+- [X] Add a metric conversion tool.
 - [ ] Integrate a task list with array storage.
 - [ ] Add JavaScript logic for a live clock.
 - [x] Add a weekly task calculator
@@ -18,6 +18,7 @@ This program's purpose is to be able to take whatever number the user inputs and
     DISPLAY “2 - Metric to Imperial”
     INPUT type
 
+<<<<<<< HEAD
     IF type = 1 THEN
 	    DISPLAY “Please choose a conversion:”
 	    DISPLAY “1 - Inch to Centimeter”
@@ -51,3 +52,37 @@ This program's purpose is to be able to take whatever number the user inputs and
             
     DISPLAY "Initial Number: “ + num + “ Conversion: “ + result
     END
+=======
+IF type = 1 THEN
+	DISPLAY “Please choose a conversion:”
+	DISPLAY “1 - Inch to Centimeter”
+	DISPLAY “2 - Foot to Centimeter”
+	DISPLAY “3 - Yard to Meter”
+	DISPLAY “4 - Mile to Kilometer”
+	INPUT selection
+	IF selection = 1 THEN
+		SET result = num * 2.54
+	ELSE IF selection = 2
+		SET result = num * 30.48
+	ELSE IF selection = 3
+		SET result = num * 0.91
+	ELSE IF selection = 4
+		SET result = num * 1.61
+ELSE
+	DISPLAY “Please choose a conversion:”
+	DISPLAY “1 - Centimeter to Inch”
+	DISPLAY “2 - Centimeter to Foot”
+	DISPLAY “3 - Meter to Yard”
+	DISPLAY “4 - Kilometer to Mile”
+	INPUT selection
+	IF selection = 1 THEN
+		SET result = num * 0.39
+	ELSE IF selection = 2
+		SET result = num * 0.0328
+	ELSE IF selection = 3
+		SET result = num * 1.09
+	ELSE IF selection = 4
+		SET result = num * 0.62
+DISPLAY "Initial Number: “ + num + “ Conversion: “ + result
+END
+>>>>>>> 56682d212f0221e5086f81086ce7c033ae7f17ec
