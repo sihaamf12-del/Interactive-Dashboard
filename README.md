@@ -2,7 +2,7 @@
 # This project is a web-based dashboard built for WEB-115 to demonstrate interactive JavaScript features.
 ## TODO: Future Enhancements
 - [X] Add a metric conversion tool.
-- [ ] Integrate a task list with array storage.
+- [X] Integrate a task list with array storage.
 - [ ] Add JavaScript logic for a live clock.
 - [x] Add a weekly task calculator
 ## Weekly Task Goals
@@ -52,3 +52,5 @@ DISPLAY "Initial Number: “ + num + “ Conversion: “ + result
 END
 ## Magic 8 Ball
 The program allows the user to ask a question. Once the ball is clicked, it will produce a random answer from a list, which will be either positive, negative, or a phrase like "try again". Once the user clicks the button below, it will erase the question asked to make way for a new one.
+## Task Manager
+It allows the user to create a list of their tasks. When they input a task into the form and submit it, the input box will clear and the text they inputted will be added to the list.

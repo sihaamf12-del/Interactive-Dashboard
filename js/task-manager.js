@@ -1,5 +1,6 @@
 // Function calculates the weekly goal based on user input and displays it in the HTML element with id "goal-message"
 // Uses the original calculation in debug.html
+let myTasks = [];
 function weeklyGoal(userName, dailyGoal, bonusTasks) {
 
     console.log("Checking status for: " + userName);
@@ -30,4 +31,19 @@ document.getElementById("goal-btn").addEventListener("click", function (event) {
     // Prints everything out using the weeklyGoal function above
     weeklyGoal(userName, dailyGoal, bonusTasks);
 
+});
+
+const taskList = document.createElement("ul");
+taskList.id = "task-list-ul";
+document.getElementById("task-list").appendChild(taskList);
+
+document.getElementById("add-task").addEventListener("click", function (event) {
+    const taskName = document.getElementById("task-name").value;
+    if (taskName) {
+        myTasks.push(taskName);
+        document.getElementById("task-name").value = "";
+        const taskItem = document.createElement("li");
+        taskItem.appendChild(document.createTextNode(taskName));
+        taskList.appendChild(taskItem);
+    }
 });
