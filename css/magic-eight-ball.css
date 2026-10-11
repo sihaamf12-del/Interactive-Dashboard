@@ -5,21 +5,33 @@
   margin: auto;
 }
 
+#magicEightBall {
+  position: relative;
+  display: inline-block;
+  margin-top: 20px;
+}
+
 #circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
   font-size: 12pt;
   background-color: white;
   color: black;
-  position: absolute;
-  margin-left: 70px;
-  margin-top: 70px;
   height: 150px;
   width: 150px;
   border-radius: 50%;
-  text-wrap: wrap;
-  display: none;
+  padding: 18px;
+  box-sizing: border-box;
+  line-height: 1.2;
   cursor: pointer;
+  z-index: 1;
 }
-
 
 img:active {
   animation: shake 1s;

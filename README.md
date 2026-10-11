@@ -18,41 +18,6 @@ This program's purpose is to be able to take whatever number the user inputs and
     DISPLAY “2 - Metric to Imperial”
     INPUT type
 
-<<<<<<< HEAD
-    IF type = 1 THEN
-	    DISPLAY “Please choose a conversion:”
-	    DISPLAY “1 - Inch to Centimeter”
-	    DISPLAY “2 - Foot to Centimeter”
-	    DISPLAY “3 - Yard to Meter”
-	    DISPLAY “4 - Mile to Kilometer”
-	    INPUT selection
-	    IF selection = 1 THEN
-		    SET result = num * 2.54
-	    ELSE IF selection = 2
-		    SET result = num * 30.48
-	    ELSE IF selection = 3
-		    SET result = num * 0.91
-	    ELSE IF selection = 4
-		    SET result = num * 1.61
-    ELSE
-	    DISPLAY “Please choose a conversion:”
-	    DISPLAY “1 - Centimeter to Inch”
-	    DISPLAY “2 - Centimeter to Foot”
-	    DISPLAY “3 - Meter to Yard”
-	    DISPLAY “4 - Kilometer to Mile”
-	        INPUT selection
-	    IF selection = 1 THEN
-		    SET result = num * 0.39
-	        ELSE IF selection = 2
-		    SET result = num * 0.0328
-	        ELSE IF selection = 3
-		    SET result = num * 1.09
-	    ELSE IF selection = 4
-		    SET result = num * 0.62
-            
-    DISPLAY "Initial Number: “ + num + “ Conversion: “ + result
-    END
-=======
 IF type = 1 THEN
 	DISPLAY “Please choose a conversion:”
 	DISPLAY “1 - Inch to Centimeter”
@@ -85,4 +50,5 @@ ELSE
 		SET result = num * 0.62
 DISPLAY "Initial Number: “ + num + “ Conversion: “ + result
 END
->>>>>>> 56682d212f0221e5086f81086ce7c033ae7f17ec
+## Magic 8 Ball
+The program allows the user to ask a question. Once the ball is clicked, it will produce a random answer from a list, which will be either positive, negative, or a phrase like "try again". Once the user clicks the button below, it will erase the question asked to make way for a new one.

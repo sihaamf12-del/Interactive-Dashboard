@@ -20,7 +20,7 @@ var answers = [
 function displayAnswer() {
     var randomIndex = Math.floor(Math.random() * answers.length);
     var circle = document.getElementById("circle");
-    circle.style.display = "block";
+    circle.style.display = "flex";
     circle.innerHTML = answers[randomIndex];
 }
 
