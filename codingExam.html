@@ -1,0 +1,95 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coding Exam</title>
+  </head>
+  <body>
+    <p>Name: Sihaam</p>
+    <p>Email: Sihaamf12@gmail.com</p>
+    <p>Date: 10/19/2026</p>
+    <h1>Amortization Calculator</h1>
+    <button id="Button1" type="button">Calculate Amortization</button>
+    <div id="results" aria-live="polite"></div>
+
+    <script>
+      document.getElementById("Button1").addEventListener("click", function() {
+        const loanAmountInput = prompt("Enter the loan amount without commas:");
+        if (loanAmountInput === null) {
+          return;
+        }
+
+        const loanAmount = Number(loanAmountInput);
+        if (!Number.isFinite(loanAmount) || loanAmount <= 0) {
+          alert("Enter a valid loan amount greater than zero.");
+          return;
+        }
+
+        const termInput = prompt("Enter the loan term in years (15 or 30):");
+        if (termInput === null) {
+          return;
+        }
+
+        const termYears = Number(termInput);
+        if (termYears !== 15 && termYears !== 30) {
+          alert("The loan term must be 15 or 30 years.");
+          return;
+        }
+        const interestRate = 0.0575;
+        const termMonths = termYears * 12;
+        const monthlyPayment = (
+          ((interestRate / 12) * loanAmount) /
+          (1 - Math.pow(1 + (interestRate / 12), termYears * -12))
+        ).toFixed(2);
+        const paymentAmount = Number(monthlyPayment);
+        const totalInterest = (paymentAmount * termMonths) - loanAmount;
+        const totalLoan = loanAmount + totalInterest;
+        const results = document.getElementById("results");
+
+        results.replaceChildren();
+
+        const summary = document.createElement("div");
+        summary.innerHTML =
+          "<p>Mortgage term in years: " + termYears + "</p>" +
+          "<p>Mortgage interest rate: 5.75%</p>" +
+          "<p>Mortgage amount: $" + totalLoan.toFixed(2) + "</p>" +
+          "<p>Total interest amount: $" + totalInterest.toFixed(2) + "</p>" +
+          "<p>Total mortgage amount: $" + totalLoan.toFixed(2) + "</p>" +
+          "<p>Monthly payment: $" + paymentAmount.toFixed(2) + "</p>";
+        results.appendChild(summary);
+
+        const table = document.createElement("table");
+        table.innerHTML =
+          "<thead><tr><th>Month</th><th>Monthly Payment</th><th>Loan Balance</th></tr></thead>";
+        const tableBody = document.createElement("tbody");
+        let balance = totalLoan;
+
+        for (let month = 1; month <= termMonths; month++) {
+          balance = Math.max(0, Number((balance - paymentAmount).toFixed(2)));
+          const row = document.createElement("tr");
+          row.innerHTML =
+            "<td>" + month + "</td>" +
+            "<td>$" + paymentAmount.toFixed(2) + "</td>" +
+            "<td>$" + balance.toFixed(2) + "</td>";
+          tableBody.appendChild(row);
+
+          if (balance === 0) {
+            const endingMessage = document.createElement("p");
+            endingMessage.textContent = "This is the Ending Amortization Calculator...";
+            table.appendChild(tableBody);
+            results.appendChild(table);
+            results.appendChild(endingMessage);
+            return;
+          }
+        }
+
+        table.appendChild(tableBody);
+        results.appendChild(table);
+    });
+    </script>
+
+  </body>
+</html>
+
