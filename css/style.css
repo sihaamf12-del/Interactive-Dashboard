@@ -25,3 +25,11 @@ p, h1 {
     padding: 10px;
     margin: 10px;
 }
+
+.important-task {
+    color: red;
+}
+
+.completed-task {
+    text-decoration: line-through;
+}
