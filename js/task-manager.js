@@ -38,12 +38,39 @@ taskList.id = "task-list-ul";
 document.getElementById("task-list").appendChild(taskList);
 
 document.getElementById("add-task").addEventListener("click", function (event) {
-    const taskName = document.getElementById("task-name").value;
-    if (taskName) {
-        myTasks.push(taskName);
-        document.getElementById("task-name").value = "";
-        const taskItem = document.createElement("li");
-        taskItem.appendChild(document.createTextNode(taskName));
-        taskList.appendChild(taskItem);
+    const taskName = document.getElementById("task-name").value.trim();
+    if (!taskName) {
+        return;
     }
+
+    const task = {
+        id: myTasks.length + 1,
+        name: taskName,
+        priority: document.getElementById("task-priority").value,
+        isImportant: document.getElementById("task-important").checked,
+        isCompleted: false,
+    };
+    myTasks.push(task);
+
+    const taskItem = document.createElement("li");
+    taskItem.classList.toggle("important-task", task.isImportant);
+    const completionCheckbox = document.createElement("input");
+    completionCheckbox.type = "checkbox";
+    completionCheckbox.setAttribute("aria-label", `Mark ${task.name} as completed`);
+    completionCheckbox.addEventListener("change", function () {
+        task.isCompleted = completionCheckbox.checked;
+        taskItem.classList.toggle("completed-task", task.isCompleted);
+    });
+
+    taskItem.appendChild(completionCheckbox);
+    taskItem.appendChild(document.createTextNode(` ${task.name}`));
+    taskList.appendChild(taskItem);
+    document.getElementById("task-name").value = "";
+
+    console.log(JSON.stringify(tasks));
+});
+
+document.getElementById("clear-tasks").addEventListener("click", function (event) {
+    myTasks = [];
+    taskList.innerHTML = "";
 });
