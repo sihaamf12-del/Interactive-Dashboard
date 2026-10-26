@@ -54,3 +54,4 @@ END
 The program allows the user to ask a question. Once the ball is clicked, it will produce a random answer from a list, which will be either positive, negative, or a phrase like "try again". Once the user clicks the button below, it will erase the question asked to make way for a new one.
 ## Task Manager
 It allows the user to create a list of their tasks. When they input a task into the form and submit it, the input box will clear and the text they inputted will be added to the list.
+UPDATE: Added more options to the task manager, such as to clear all tasks, set priority, and check tasks off as completed.
