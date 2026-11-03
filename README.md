@@ -55,3 +55,5 @@ The program allows the user to ask a question. Once the ball is clicked, it will
 ## Task Manager
 It allows the user to create a list of their tasks. When they input a task into the form and submit it, the input box will clear and the text they inputted will be added to the list.
 UPDATE: Added more options to the task manager, such as to clear all tasks, set priority, and check tasks off as completed.
+## Real-Time Digital Clock and Calendar
+It gives the user an accurate display of both the date and time, using the 12-hour clock system.
