@@ -1,0 +1,21 @@
+#clock-face {
+  font-size: 2em;
+  background-color: #faf2f2;
+  border: 1px solid #000;
+  font-family: 'Courier New', Courier, monospace;
+  text-align: center;
+  margin-top: 20px;
+}
+
+#calendar-date {
+  font-size: 1.5em;
+  background-color: #faf2f2;
+  border: 1px solid #000;
+  text-align: center;
+  margin-top: 10px;
+}
+
+#h3 {
+  text-align: center;
+  margin-top: 20px;
+}
